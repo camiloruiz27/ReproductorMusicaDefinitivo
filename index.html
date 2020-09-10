@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "./css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a062562745.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="gameboy">
+        
+        <div class="cuerpocompleto">
+            <div class="pantalla">
+                <div class="pantallanegra" style="position:relative;left:-15px;top:-25px;">
+                    
+                    <div class="pantallagris" style="left:60px;top:10px;">
+                            <div class="track-name">Track Name</div> 
+                            <div class="cover" >
+                                <div class="foto"></div>
+                            </div>
+                            <div class="barraprogreso"> 
+                                <div class="current-time">00:00</div> 
+                                <input type="range" min="1" max="100"
+                                  value="0" class="seek_slider"  style="color: green; position: relative; top: -125px; left: -10px;" onchange="seekTo()"> 
+                                <div class="duration">00:00</div> 
+                              </div>
+                    </div>
+
+
+
+
+
+                    <div class="led"style="position:relative;left:-15px;top:-150px;" ></div>
+                    <div class="luna"style="position:relative;left:-18px;top:-238px;transform: scale(0.12);"></div>
+                    <div class="luna"style="position:relative;left:-30px;top:-348px;transform: scale(0.15);"></div>
+                    <div class="luna"style="position:relative;left:-8px;top:-458px;transform: scale(0.1);"></div>
+                    <div class="nintendo" style="color: white; position:relative;left:-140px;top:-520px; transform: scale(0.45) ;">Power</div>
+                    <div class="gameletra" style="color: white; position:relative;left:-45px;top:-435px;">GAME BOY</div>
+                    <div class="colorpalabra">
+                        <div class="c"style="position:relative;left:160px;top:-507px;">C</div>
+                        <div class="o"style="position:relative;left:118px;top:-505.5px;transform: scale(0.85);">O</div>
+                        <div class="l"style="position:relative;left:78px;top:-507px;transform: rotate(-15deg);">L</div>
+                        <div class="o2"style="position:relative;left:40px;top:-506px;transform: scale(0.85);">O</div>
+                        <div class="r"style=" position:relative;left:-1px;top:-507px;">R</div>
+                    </div>
+                </div>
+            </div>
+            <div class="botonNintendo" style="position:relative; top:-29px; left: 112px;"> </div>
+            <div class="nintendo" style="position:relative; top:-75px;">NINTENDO</div>
+            <div class="parteAbajo">
+                <div class="cruz">
+                    <div class="cuadritoN" style="position:relative; top:-67px;">
+                        <!--<div class="cuadritoN" style="position:relative; background-color: grey; transform: scale(1.5);"></div>-->
+                    </div>
+                    <div class="cuadritoS" style="position:relative; left:31px; top:-130px;"></div>
+                    <div class="volum" value="80" min="0" max="100">
+                        <div class="controls">
+                    <div class="btn volumen" onclick="prevTrack()" style="position:relative; left:-60px; top:-269px; transform: scale(0.5);"><i class="fa fa-step-backward fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="volum" value="80"value="80" min="0" max="100">
+                        <div class="controls">
+                    <div class="btn volumen" onclick="nextTrack()" style="position:relative; left:5px; top:-451px; transform: scale(0.5);"><i class="fa fa-step-forward fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="botoncentro" style="position:relative; left:17px; top:-572px;"></div>
+                    <div class="volum" value="80"value="80" min="0" max="100">
+                        <div class="controls">
+                            <div class="btn volumen" style="position:relative; left:-34.5px; top:-715px;" onclick=handleVolumeUp()><i class="fas fa-plus"></i></div>   
+                        </div>
+                    </div>
+                    <div class="volum" value="80"value="80" min="0" max="100">
+                        <div class="controls">
+                            <div class="btn volumen" style="position:relative; left:-34.5px; top:-815px;" onclick=handleVolumeDown()><i class="fas fa-minus" ></i></div>   
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="boton" style="position:relative;left:25px;top:-55px;" >
+                    <div class="controls">
+                        <div class="espause" >
+                            <div class="btn playBtn" style="position:relative;left:-45px;top:-78px;"onclick="pauseTrack()"><i class="fas fa-pause"></i></div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="boton" style="position:relative;left:25px;top:-90px;">
+                    <div class="controls">
+                        <div class="esplay" >
+                            <div class="btn playBtn" style="position:relative;left:-43px;top:-78px;" onclick="playTrack()"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="botonAlargado" style="position:relative;left:60px; top:-160px" onclick="revolver()"></div>
+            <div class="botonAlargado" style="position:relative;left:140px; top:-250px;" onclick="normal()"></div>
+            <div class="lectraSelect"style="position:relative;left:-30px; top:-300px;">shuffle</div>
+            <div class="lectraSelect" style="position:relative;left:50px; top:-345px;">normal</div>
+            <div class="parlante" style="position:relative;left:265px; top:-435px;">
+                <div class="parlanticoA" style="background-color: transparent;"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA" style="background-color: transparent;"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"style="background-color: transparent;"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"></div>
+                <div class="parlanticoB"></div>
+                <div class="parlanticoA"style="background-color: transparent;"></div>
+            </div>
+        </div>
+        
+    </div>
+    <!--<div class="sombra" style="position:absolute;left:-15px;top:50px;"></div>-->
+    <h1 class="gameletra1">Game Boy by Camilo Ruiz</h1>
+    <script src="./src/codigo.js"></script> 
+</body>
+</html>
