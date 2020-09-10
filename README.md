@@ -1,1 +1,1 @@
-![](assets/FondoDefinitivi.JPG)
+![](assets/FondoDefinitivo.JPG)
